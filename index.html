@@ -134,7 +134,7 @@
       }
 
       /* ---------- arco + faixas ---------- */
-      .arch-zone{position:relative;margin-top:30px;padding-bottom:64px}
+      .arch-zone{position:relative;margin-top:30px;padding-bottom:30px}
       .arch-wrap{display:flex;justify-content:center;position:relative;z-index:2}
       .arch-outer{
         width:176px;padding:6px;border:1px solid var(--masala);border-radius:999px 999px 20px 20px;
@@ -146,6 +146,8 @@
       }
       .arch-inner video{width:100%;height:100%;object-fit:cover;display:block}
       .ribbons{position:absolute;left:50%;top:0;width:130%;transform:translateX(-50%);height:100%;pointer-events:none}
+      .ribbons-back{z-index:1}
+      .ribbons-front{z-index:3}
       .ribbon{
         position:absolute;left:0;width:100%;overflow:hidden;white-space:nowrap;
         display:flex;align-items:center;height:34px;
@@ -155,7 +157,7 @@
         font-size:.68rem;font-weight:650;letter-spacing:.26em;text-transform:uppercase;padding:0 .4em;
       }
       .ribbon.back{
-        top:16%;background:var(--mocha);transform:rotate(-4deg);z-index:1;
+        top:16%;background:var(--mocha);transform:rotate(-4deg);z-index:1;filter:blur(1.4px);
       }
       .ribbon.back span{color:var(--masala)}
       .ribbon.back .track{animation:marqL 26s linear infinite}
@@ -170,6 +172,7 @@
 
       /* ---------- seções ---------- */
       section{margin-top:44px}
+      .ba-sec{margin-top:24px}
       .sec-head{text-align:center;margin-bottom:18px}
       .sec-head h2{
         margin:0;font-family:var(--serif);font-weight:400;font-size:1.45rem;color:var(--masala);
@@ -305,9 +308,9 @@
       }
       .actions{display:flex;flex-direction:column;gap:14px;margin-top:46px}
       .btn{
-        display:flex;align-items:center;justify-content:center;gap:11px;
-        min-height:58px;padding:15px 22px;border-radius:99px;
-        text-decoration:none;font-size:.95rem;font-weight:650;letter-spacing:.03em;
+        display:flex;align-items:center;justify-content:flex-start;gap:11px;
+        min-height:58px;padding:15px 22px 15px 30px;border-radius:99px;
+        text-decoration:none;font-size:.95rem;font-weight:650;letter-spacing:.03em;text-align:left;
         transition:transform .3s ease,box-shadow .3s ease;
       }
       .btn svg{flex:0 0 auto}
@@ -376,14 +379,16 @@
             </div>
           </div>
         </div>
-        <div class="ribbons" aria-hidden="true">
+        <div class="ribbons ribbons-back" aria-hidden="true">
           <div class="ribbon back"><div class="track"><span>Harmonização Facial ✦ Bellare ✦ Rejuvenescimento ✦ Beleza Autêntica ✦ Qualidade de Pele ✦</span></div><div class="track"><span>Harmonização Facial ✦ Bellare ✦ Rejuvenescimento ✦ Beleza Autêntica ✦ Qualidade de Pele ✦</span></div></div>
+        </div>
+        <div class="ribbons ribbons-front" aria-hidden="true">
           <div class="ribbon front"><div class="track"><span>Harmonização Facial ✦ Bellare ✦ Rejuvenescimento ✦ Beleza Autêntica ✦ Qualidade de Pele ✦</span></div><div class="track"><span>Harmonização Facial ✦ Bellare ✦ Rejuvenescimento ✦ Beleza Autêntica ✦ Qualidade de Pele ✦</span></div></div>
         </div>
       </div>
 
       <!-- ===== COMPARADOR ===== -->
-      <section class="reveal" aria-label="Comparador antes e depois">
+      <section class="reveal ba-sec" aria-label="Comparador antes e depois">
         <div class="sec-head">
           <h2>Antes &amp; depois</h2>
           <p>Arraste e veja a diferença</p>
